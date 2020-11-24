@@ -16,12 +16,14 @@ The example input files are:
 - bad_sig.sha512
 
 Example execution:
+
 python ./Main.py public.pem message.txt bad_sig.sha512
 
 The private key information is printed into standart output and a valid signature is in file good_sig.sha512
 
 
-How RSA-CRT and fault attack works:
+**How RSA-CRT and fault attack works:
+
 *RSA-CRT*
 
 The computation of the RSA signature can be sped up using the Chinese
@@ -44,7 +46,7 @@ And then compute and combine the partial signatures:
     s == m^d (mod N)
 
 
-*RSA-CRT fault attack*
+**RSA-CRT fault attack*
 
 If an attacker can introduce a fault in the victim's computation of one of
 the partial signatures (e.g. a random bit flip in s2, before s1 and s2 are
