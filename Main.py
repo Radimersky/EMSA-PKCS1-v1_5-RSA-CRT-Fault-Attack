@@ -88,16 +88,25 @@ def fault_attack_rsa(hash, key, incorrectSignature, originalMessage):
     signature_output = open("good_sig.sha512", "wb")
     signature_output.write(random_key_signature)
 
-    # the modulus N from the public key
+    print("Private key N")
+    print(hex(private_key.n))
+    print("Private key prime p")
+    print(hex(private_key.p))
+    print("Private key prime q")
+    print(hex(private_key.q))
+    print("Private key d")
+    print(hex(private_key.d))
+    print("the modulus N from the public key")
     print(hex(n))
-    # the faulty signature to the power e modulo N (i.e. (s'^e mod N))
+    print("the faulty signature to the power e modulo N (i.e. (s'^e mod N))")
     print(hex(pow(s, e, n)))
-    # the hash of the message padded according to the PKCS #1 v1.5 format
+    print("the hash of the message padded according to the PKCS #1 v1.5 format")
     print(hex(m))
-    # the prime factor of N obtained from the GCD computation
+    print("the prime factor of N obtained from the GCD computation")
     print(hex(p))
-    # a valid signature of the message
+    print("a valid signature of the message")
     print(hex(bytes_to_long(random_key_signature)))
+
 
 
 keyPath = sys.argv[1]
