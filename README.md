@@ -46,7 +46,7 @@ And then compute and combine the partial signatures:
     s == m^d (mod N)
 
 
-**RSA-CRT fault attack*
+**RSA-CRT fault attack**
 
 If an attacker can introduce a fault in the victim's computation of one of
 the partial signatures (e.g. a random bit flip in s2, before s1 and s2 are
